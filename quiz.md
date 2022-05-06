@@ -36,7 +36,8 @@ Répondre aux questions directement dans ce fichier.
 # API
 
 ### 1. Qu'est-ce que nous voulons dire quand on parle d'un CRUD?
-
+    Quand on parle de CRUD, cela désigne les quatres opérations de base pour la persistance
+    des données. Il s'agit du Create, du Read, de l'Update et du Delete.
 
 ### 2. Donnez-moi les exemples de routes/endpoints correspondant à un CRUD pour des `users` (e.g. donner les routes et les méthodes HTTP) :
 
@@ -45,10 +46,14 @@ Répondre aux questions directement dans ce fichier.
 
 
 ### 4. À quoi servent les outils comme JMeter?
-
+    JMeter est un logiciel développé par Apache qui a pour but de tester le comportement
+    fonctionnel et mesurer la performances d'une application.
 
 ### 5. Pourquoi est-il important de tester son site ou son API avec un outil comme JMeter?
-
+    Il est important de faire des tests de performance sur son application pour plusieurs
+    raisons. Premièrement, permet d'avoir certaines informations sur l'application, par exemple, 
+    sa vitesse, sa stabilité ou son évolutivité. Deuxièmement, encore plus important, cela permet de découvrir ce 
+    qui doit être à améliorer avant la mise en marché du produit.
 
 ### 6. Qu'est-ce qu'une migration (base de données)?
 
