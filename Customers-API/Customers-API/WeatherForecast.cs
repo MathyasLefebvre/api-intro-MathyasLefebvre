@@ -1,4 +1,4 @@
-namespace API_Cutstomers;
+namespace Customers_API;
 
 public class WeatherForecast
 {
