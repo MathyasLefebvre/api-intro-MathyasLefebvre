@@ -3,27 +3,29 @@ namespace Customers_API.Core.Models.DTOs;
 
 public class OrderRequest
 {
-    [Required]
-    [StringLength(50, MinimumLength = 1)]
-    public string Country { get; set; }
+    [Key]
+    public int order_id { get; set; }
     
-    [Required]
-    [StringLength(100, MinimumLength = 3)]
-    public string Street { get; set; }
+    public int customer_id { get; set; }
+
+    //[StringLength(50, MinimumLength = 1)]
+    public string country { get; set; }
     
-    [Required]
-    [StringLength(50, MinimumLength = 3)]
-    public string City { get; set; }
+    //[StringLength(100, MinimumLength = 3)]
+    public string street { get; set; }
     
-    [Required]
-    [StringLength(6)]
-    public string ZipCode { get; set; }
+    //[StringLength(50, MinimumLength = 3)]
+    public string city { get; set; }
     
-    [Required]
-    [Range(0, double.MaxValue, ErrorMessage = "Please enter valid doubleNumber")]
-    public double Total { get; set; }
+    //[Required]
+    //[StringLength(6)]
+    public string zip_code { get; set; }
     
-    [Required]
-    [EmailAddress]
-    public string Email { get; set; }
+    //[Required]
+    //[Range(0, double.MaxValue, ErrorMessage = "Please enter valid doubleNumber")]
+    public double total { get; set; }
+    
+    //[Required]
+    //[EmailAddress]
+  
 }
