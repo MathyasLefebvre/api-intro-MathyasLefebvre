@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Customers-API.Core\Customers-API.Core.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Folder Include="Models" />
     </ItemGroup>
 
@@ -32,6 +28,10 @@
       <PackageReference Include="Npgsql" Version="7.0.0-preview.4" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0-preview.4" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Customers-API.Core\Customers-API.Core.csproj" />
     </ItemGroup>
 
 </Project>
