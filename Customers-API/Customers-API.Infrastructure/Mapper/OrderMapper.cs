@@ -15,4 +15,14 @@ public static class OrderMapper
                     Email = customer.Email
             };
         }
+
+    public static Customer RequestToCustomer(CreateCustomerRequest customer)
+    {
+        return new Customer
+        {
+                Firstname = customer.Firstname,
+                Lastname = customer.Lastname,
+                Email = customer.Email
+        };
+    }
 }

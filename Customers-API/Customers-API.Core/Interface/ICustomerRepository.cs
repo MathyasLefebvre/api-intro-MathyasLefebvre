@@ -11,7 +11,7 @@ public interface ICustomerRepository
     
     void DeleteById(int id);
     
-    void CreateCustomer(CreateCustomerRequest customer);
+    CustomerResponse CreateCustomer(CreateCustomerRequest customer);
     
     void UpdateCustomer(CreateCustomerRequest customer); 
 }

@@ -17,12 +17,14 @@ public class HomeController: ControllerBase
     }
 
     [HttpGet]
+    [Route("customers")]
     public ActionResult<IEnumerable<CustomerResponse>> GetCustomer()
     {
         return Ok(_repository.GetCustomer());
     }
 
     [HttpGet]
+    [Route("customer/{id}")]
     public ActionResult<CustomerResponse> GetCustomerById(int id)
     {
         return Ok(_repository.GetCustomerById(id));
@@ -35,9 +37,11 @@ public class HomeController: ControllerBase
     }
 
     [HttpPost]
-    public void CreateCustomer(CreateCustomerRequest customer)
+    public ActionResult<CustomerResponse> CreateCustomer(CreateCustomerRequest customer)
     {
-        throw new NotImplementedException();
+        if (!ModelState.IsValid)
+            return NotFound();
+        return Ok(_repository.CreateCustomer(customer));
     }
 
     [HttpPut]

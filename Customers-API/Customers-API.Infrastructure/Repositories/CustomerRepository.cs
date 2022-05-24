@@ -37,9 +37,13 @@ public class CustomerRepository: ICustomerRepository
         }
     }
 
-    public void CreateCustomer(CreateCustomerRequest customer)
+    public CustomerResponse CreateCustomer(CreateCustomerRequest customer)
     {
-        throw new NotImplementedException();
+        var newCustomer = OrderMapper.RequestToCustomer(customer);
+        _context.Customers.Add(newCustomer);
+        _context.SaveChanges();
+        var createCustomer = OrderMapper.CustomerToDto(newCustomer);
+        return createCustomer;
     }
 
     public void UpdateCustomer(CreateCustomerRequest customer)
