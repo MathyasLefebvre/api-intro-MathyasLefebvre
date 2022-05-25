@@ -3,6 +3,7 @@ using Customers_API.Core.Interface;
 using Customers_API.Core.Maper;
 using Customers_API.Core.Models.DTOs;
 using Customers_API.Infrastructure.Models;
+using Customers_API.Infrastructure.Utilities;
 
 namespace Customers_API.Infrastructure.Repositories;
 
@@ -35,6 +36,7 @@ public class OrderRepository: IOrderRepository
         var order = AddOrder(orderRequest, customer);
         AddOrderItem(orderRequest, order);
         var orderResponse = GetOrderResponse(order);
+        
         return orderResponse;
     }
 
@@ -72,5 +74,11 @@ public class OrderRepository: IOrderRepository
             _dbContext.OrderItems.Add(orderItem);
             _dbContext.SaveChanges();
         }
+    }
+
+    private async void UpdateInformation()
+    {
+        JsonFileWriter writer = new JsonFileWriter(_dbContext);
+        writer.WriteToJsonFile();
     }
 }
