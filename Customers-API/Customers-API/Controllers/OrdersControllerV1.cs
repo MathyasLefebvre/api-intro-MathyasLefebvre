@@ -14,6 +14,12 @@ public class OrdersControllerV1: ControllerBase
     {
         _repository = repository;
     }
+
+    [HttpGet]
+    public void GetApiInformation()
+    {
+        
+    }
     
     [HttpPost]
     public ActionResult<OrderResponse> CreateCustomer(CreateOrderRequest order)
