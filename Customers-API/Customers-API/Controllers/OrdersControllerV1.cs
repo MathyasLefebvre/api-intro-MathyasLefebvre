@@ -16,9 +16,9 @@ public class OrdersControllerV1: ControllerBase
     }
 
     [HttpGet]
-    public void GetApiInformation()
+    public ActionResult<StatsResponse> GetStatistic()
     {
-        
+        return Ok(_repository.GetStatistic());
     }
     
     [HttpPost]

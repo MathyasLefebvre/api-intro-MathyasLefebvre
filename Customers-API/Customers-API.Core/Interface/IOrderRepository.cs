@@ -12,5 +12,7 @@ public interface IOrderRepository
     
     OrderResponse CreateOrder(CreateOrderRequest order);
     
-    void UpdateOrder(CreateOrderRequest order); 
+    void UpdateOrder(CreateOrderRequest order);
+
+    StatsResponse GetStatistic();
 }

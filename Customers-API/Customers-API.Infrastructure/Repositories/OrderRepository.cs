@@ -4,6 +4,7 @@ using Customers_API.Core.Maper;
 using Customers_API.Core.Models.DTOs;
 using Customers_API.Infrastructure.Models;
 using Customers_API.Infrastructure.Utilities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Customers_API.Infrastructure.Repositories;
 
@@ -36,13 +37,18 @@ public class OrderRepository: IOrderRepository
         var order = AddOrder(orderRequest, customer);
         AddOrderItem(orderRequest, order);
         var orderResponse = GetOrderResponse(order);
-        
+        UpdateInformation();
         return orderResponse;
     }
 
     public void UpdateOrder(CreateOrderRequest order)
     {
         throw new NotImplementedException();
+    }
+
+    public StatsResponse GetStatistic()
+    {
+        return OrderMapper.OrderStatsToDto(_dbContext);
     }
 
     private OrderResponse GetOrderResponse(Order order)
@@ -76,7 +82,7 @@ public class OrderRepository: IOrderRepository
         }
     }
 
-    private async void UpdateInformation()
+    private void UpdateInformation()
     {
         JsonFileWriter writer = new JsonFileWriter(_dbContext);
         writer.WriteToJsonFile();
