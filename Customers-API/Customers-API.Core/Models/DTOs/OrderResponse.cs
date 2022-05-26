@@ -4,8 +4,6 @@ public class OrderResponse
 {
     public virtual CustomerResponse Customer { get; set; }
     
-    public int OrderId { get; set; }
-    
     public int CustomerId { get; set; }
     
     public string Country { get; set; }
