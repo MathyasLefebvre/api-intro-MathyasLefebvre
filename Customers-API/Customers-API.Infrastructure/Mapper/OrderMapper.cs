@@ -1,4 +1,5 @@
 using Customers_API.Core.Models.DTOs;
+using Customers_API.Infrastructure;
 using Customers_API.Infrastructure.Models;
 
 namespace Customers_API.Core.Maper;
@@ -71,6 +72,17 @@ public static class OrderMapper
            Price = request.Price,
            Quantity = request.Quantity,
            Order = order
+        };
+    }
+
+    public static StatsResponse OrderStatsToDto(DBContext dbContext)
+    {
+        return new StatsResponse
+        {
+            OrdersCount = JsonFileQuery.GetNumberOfOrders(dbContext),
+            OrdersItemsCount = JsonFileQuery.GetNumberOfOrdersItems(dbContext),
+            OrderedFromCanadaCount = JsonFileQuery.GetCanadaData(dbContext),
+            OrderedFromOtherCountriesCount = JsonFileQuery.GetOtherCountryData(dbContext)
         };
     }
 }
