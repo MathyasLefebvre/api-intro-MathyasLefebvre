@@ -21,9 +21,11 @@ public class JsonFileWriter
 
     public string GetJson()
     {
-        var json = Query.GetCountryData(_context);
-        json += "\n";
-        json += Query.GetOrdersData(_context);
-        return json;
+        var stats = new OrderStatsJson
+        {
+            Country = JsonFileQuery.GetCountryData(_context),
+            Stats = JsonFileQuery.GetOrdersData(_context)
+        };
+        return JsonSerializer.Serialize(stats);
     }
 }
