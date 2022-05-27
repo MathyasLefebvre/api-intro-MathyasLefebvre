@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Xml;
 using Customers_API.Infrastructure.Models;
 
 namespace Customers_API.Infrastructure.Utilities;
@@ -19,13 +20,12 @@ public class JsonFileWriter
         File.WriteAllText(Directory.GetCurrentDirectory() + _PATH, json);
     }
 
-    public string GetJson()
+    public OrderStatsJson GetJson()
     {
-        var stats = new OrderStatsJson
+        return new OrderStatsJson
         {
             Country = JsonFileQuery.GetCountryData(_context),
             Stats = JsonFileQuery.GetOrdersData(_context)
         };
-        return JsonSerializer.Serialize(stats);
     }
 }
