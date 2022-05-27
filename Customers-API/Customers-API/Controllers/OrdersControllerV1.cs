@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Customers_API.Controllers;
 
 [ApiController]
-[Route("api/v1/[controller]")]
 public class OrdersControllerV1: ControllerBase
 {
     private readonly IOrderRepository _repository;
@@ -16,12 +15,14 @@ public class OrdersControllerV1: ControllerBase
     }
 
     [HttpGet]
+    [Route("api/v1/stats")]
     public ActionResult<StatsResponse> GetStatistic()
     {
         return Ok(_repository.GetStatistic());
     }
     
     [HttpPost]
+    [Route("api/v1/orders")]
     public ActionResult<OrderResponse> CreateCustomer(CreateOrderRequest order)
     {
         if (!ModelState.IsValid)
