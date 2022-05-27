@@ -11,6 +11,7 @@ namespace Customers_API.Infrastructure.Repositories;
 public class OrderRepository: IOrderRepository
 {
     private DBContext _dbContext;
+    private readonly object _locker = new();
 
     public OrderRepository(DBContext dbContext)
     {
@@ -84,7 +85,10 @@ public class OrderRepository: IOrderRepository
 
     private void UpdateInformation()
     {
-        JsonFileWriter writer = new JsonFileWriter(_dbContext);
-        writer.WriteToJsonFile();
+        lock (_locker)
+        {
+            JsonFileWriter writer = new JsonFileWriter(_dbContext);
+            writer.WriteToJsonFile();
+        }
     }
 }
