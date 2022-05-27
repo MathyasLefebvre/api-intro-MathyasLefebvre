@@ -18,7 +18,6 @@ public static class DependencyInjection
             if (defaultConnectionString != null) options.UseNpgsql(defaultConnectionString);
         });
         services.AddScoped<IOrderRepository, OrderRepository>();
-        services.AddScoped<ICustomerRepository, CustomerRepository>();
         return services;
     }
 }

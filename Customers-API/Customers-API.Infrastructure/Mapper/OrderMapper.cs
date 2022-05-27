@@ -6,26 +6,6 @@ namespace Customers_API.Core.Maper;
 
 public static class OrderMapper
 {
-    public static CustomerResponse CustomerToDto(Customer customer)
-    {
-        return new CustomerResponse()
-        {
-                Firstname = customer.Firstname,
-                Lastname = customer.Lastname,
-                Email = customer.Email
-        };
-    }
-
-    // va partir
-    public static Customer RequestToCustomer(CreateCustomerRequest customer)
-    {
-        return new Customer
-        {
-                Firstname = customer.Firstname,
-                Lastname = customer.Lastname,
-                Email = customer.Email
-        };
-    }
 
     public static OrderResponse OrderToDto(Order order)
     {
