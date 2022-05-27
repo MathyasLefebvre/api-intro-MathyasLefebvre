@@ -9,6 +9,7 @@ builder.Services.AddInfrastructure(builder.Configuration);
 
 // Add services to the container.
 var logger = new LoggerConfiguration()
+        .MinimumLevel.Warning()
         .ReadFrom.Configuration(builder.Configuration)
         .Enrich.FromLogContext()
         .CreateLogger();
