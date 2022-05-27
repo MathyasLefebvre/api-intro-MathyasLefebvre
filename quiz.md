@@ -16,7 +16,7 @@ Répondre aux questions directement dans ce fichier.
     Contrairement au vertical scaling, le "horizontal scaling" consiste à ajouter le nombres de machines toute en améliorant pas
     les machines déja en place.
 
-### 3. Qu'est-ce que signifie `DevOps`?
+### 3. Qu'est-ce que signifie `DevOps`? 
     Le DevOps est un mouvement qui encourage la collaboration entre les équipes de développement et d'exploitation en ce qui
     concerne le domaine de l'informatique. En effet, celui-ci a pour but d'améliorer la qualité du travail et des relations.
     Le DevOps prône qu'en unissant ces deux équipes, il y plus de satisfaction du client et il sera possible de livrer du nouveau 
