@@ -30,10 +30,11 @@ Répondre aux questions directement dans ce fichier.
     et les classements.
 
 ### 5. Quel est l'inconvénient d'utiliser la persistence par défaut des sessions dans une application Web?
-
+    Je dirais que l'inconvenient d'utiliser des sessions afin de faire la gestion des données est quel se perd qu'on ferme 
+    la page Web ou elle se relance après un certain temps.
 
 ### 6. Comment pourrions-nous éviter ce problème? Expliquer un exemple d'architecture que nous pourrions mettre en place.
-
+    Il foudrait éviter de stocker des données dans la session comme on le fait souvent. On pourrait faire un projet basé sur des cookies
 
 ### 7. Pourquoi est-il important d'avoir de bons logs dans notre application?
     Les logs sont très importantes pour une application puisqu'elles nous aident , et ce, pour plusieurs raisons dans différentes branches. Tout d'abord, dans la
